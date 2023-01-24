@@ -32,29 +32,19 @@ public class MatchMarkdownSerializerTest
     {
         serializer = new MatchMarkdownSerializer();
 
-        Player blue1 = mock(Player.class);
-        when(blue1.getName()).thenReturn("CarlJr");
-        Player blue2 = mock(Player.class);
-        when(blue2.getName()).thenReturn("Pac");
-
         Team blueTeam = mock(Team.class);
         when(blueTeam.getName()).thenReturn("Solary");
         when(blueTeam.getShortName()).thenReturn("SLY");
-        when(blueTeam.getPlayer1()).thenReturn(blue1);
-        when(blueTeam.getPlayer2()).thenReturn(blue2);
+        when(blueTeam.getPlayer1()).thenReturn("CarlJr");
+        when(blueTeam.getPlayer2()).thenReturn("Pac");
         when(blueTeam.getCastLink()).thenReturn("https://www.twitch.tv/solary");
         when(blueTeam.getCastLanguage()).thenReturn("fr");
-
-        Player red1 = mock(Player.class);
-        when(red1.getName()).thenReturn("Affi");
-        Player red2 = mock(Player.class);
-        when(red2.getName()).thenReturn("Aurel");
 
         Team redTeam = mock(Team.class);
         when(redTeam.getName()).thenReturn("BDS Esport");
         when(redTeam.getShortName()).thenReturn("BDS");
-        when(redTeam.getPlayer1()).thenReturn(red1);
-        when(redTeam.getPlayer2()).thenReturn(red2);
+        when(redTeam.getPlayer1()).thenReturn("Affi");
+        when(redTeam.getPlayer2()).thenReturn("Aurel");
         when(redTeam.getCastLink()).thenReturn("https://www.twitch.tv/teambds");
         when(redTeam.getCastLanguage()).thenReturn("fr");
 

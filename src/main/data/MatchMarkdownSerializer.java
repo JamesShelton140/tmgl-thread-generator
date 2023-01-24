@@ -52,7 +52,7 @@ public class MatchMarkdownSerializer
         for (Team team : new Team[]{blueTeam, redTeam})
         {
             threadBody.append(bold(team.getName() + ":"));
-            threadBody.append(" " + team.getPlayer1().getName() + " & " + team.getPlayer2().getName());
+            threadBody.append(" " + team.getPlayer1() + " & " + team.getPlayer2());
             threadBody.append("\n\n");
             threadBody.append(team.getCastLink() == null
                     ? "No Team Cast"

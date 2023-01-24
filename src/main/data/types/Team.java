@@ -7,8 +7,8 @@ public class Team
 {
     private String name;
     private String shortName;
-    private Player player1;
-    private Player player2;
+    private String player1;
+    private String player2;
     private String castLink;
     private String castLanguage;
 
