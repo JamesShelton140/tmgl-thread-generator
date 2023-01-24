@@ -1,6 +1,12 @@
 package main.data.types;
 
-public class Stage {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class Stage
+{
     private String name; //Playday 1
     private String shortName;
     private MapPack mapPack;

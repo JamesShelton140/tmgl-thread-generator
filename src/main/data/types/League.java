@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class MapPack
+public class League
 {
     private String name;
-    private List<Maps> maps;
+    private List<Team> teams;
 }
