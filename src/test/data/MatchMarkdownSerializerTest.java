@@ -1,7 +1,6 @@
 package test.data;
 
-//import org.junit.*;
-
+import javax.swing.JPanel;
 import main.data.MatchMarkdownSerializer;
 import main.data.types.MapPick;
 import main.data.types.Maps;
@@ -13,9 +12,12 @@ import main.data.types.Team;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class MatchMarkdownSerializerTest
 {
 
