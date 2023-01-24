@@ -10,5 +10,6 @@
     <orderEntry type="library" name="gson" level="project" />
     <orderEntry type="library" name="lombok-1.18.24" level="project" />
     <orderEntry type="library" name="junit" level="project" />
+    <orderEntry type="library" name="mockito.core" level="project" />
   </component>
 </module>
