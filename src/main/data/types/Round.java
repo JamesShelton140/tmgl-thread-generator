@@ -10,7 +10,7 @@ public class Round
     private Team redTeam;
     private HashMap<Player, Integer> result;
 
-    private int getScore(Team team)
+    public int getScore(Team team)
     {
         int teamResult = result.get(team.getPlayer1()) + result.get(team.getPlayer2());
         int score = switch (teamResult)

@@ -15,8 +15,14 @@ public class MapPick
 
     public int getScore(Team team)
     {
-        determineWinner();
-        return winner != null && team.equals(winner) ?  1 : 0;
+        int score = 0;
+
+        for (Round round : rounds.values())
+        {
+            score += round.getScore(team);
+        }
+
+        return score;
     }
 
     public void determineWinner()
