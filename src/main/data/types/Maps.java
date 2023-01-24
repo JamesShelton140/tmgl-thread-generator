@@ -10,6 +10,7 @@ public enum Maps
     AEROPIPES("Aeropipes"),
     AGILITY_DASH("Agility Dash"),
     BACK_N_FORTH("Back'N'Forth"),
+    FLIP_OF_FAITH("Flip of Faith"),
     FREESTYLE("Freestyle"),
     GYROSCOPE("Gyroscope"),
     PARKOUR("Parkour"),
