@@ -23,7 +23,6 @@ public class DataStore
 
     private List<Match> matches = new ArrayList<>();
 
-
     public DataStore()
     {
         createTeams();
