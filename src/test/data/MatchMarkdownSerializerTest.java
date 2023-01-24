@@ -1,11 +1,9 @@
 package test.data;
 
-import javax.swing.JPanel;
 import main.data.MatchMarkdownSerializer;
 import main.data.types.MapPick;
 import main.data.types.Maps;
 import main.data.types.Match;
-import main.data.types.Player;
 import main.data.types.Stage;
 import main.data.types.Team;
 

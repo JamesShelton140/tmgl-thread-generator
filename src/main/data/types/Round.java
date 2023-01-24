@@ -8,7 +8,7 @@ public class Round
 {
     private Team blueTeam;
     private Team redTeam;
-    private HashMap<Player, Integer> result;
+    private HashMap<String, Integer> result;
 
     public int getScore(Team team)
     {

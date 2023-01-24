@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import lombok.Data;
 import main.data.types.League;
 import main.data.types.MapPack;
 import main.data.types.Maps;
@@ -12,13 +13,15 @@ import main.data.types.Match;
 import main.data.types.Stage;
 import main.data.types.Team;
 
+@Data
 public class DataStore
 {
     private Map<String, Team> teams = new HashMap<>();
     private Map<String, MapPack> mapPacks = new HashMap<>();
     private Map<String, Stage> stages = new HashMap<>();
-    private List<Match> matches = new ArrayList<>();
     private Map<String, League> leagues = new HashMap<>();
+
+    private List<Match> matches = new ArrayList<>();
 
 
     public DataStore()
