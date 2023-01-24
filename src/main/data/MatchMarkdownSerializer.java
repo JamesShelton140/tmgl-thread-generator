@@ -52,8 +52,8 @@ public class MatchMarkdownSerializer
         for (Team team : new Team[]{blueTeam, redTeam})
         {
             threadBody.append(bold(team.getName() + ":"));
-            threadBody.append(" " + team.getPlayer1() + "&" + team.getPlayer2());
-            threadBody.append("\n");
+            threadBody.append(" " + team.getPlayer1().getName() + " & " + team.getPlayer2().getName());
+            threadBody.append("\n\n");
             threadBody.append(team.getCastLink() == null
                     ? "No Team Cast"
                     : link("Team Cast [" + team.getCastLanguage() + "]", team.getCastLink()));
@@ -87,7 +87,6 @@ public class MatchMarkdownSerializer
         threadBody.append("\n\n");
 
         threadBody.append(link("VOD (main cast)", "https://www.twitch.tv/wirtual"));
-        threadBody.append("\n\n");
 
         return threadBody.toString();
     }
