@@ -206,7 +206,7 @@ public class DataStore
         );
 
         teams.put("EXA", new Team(
-                "BS+COMPETITION",
+                "Exalty",
                 "EXA",
                 "link",
                 "MiQuatro",
@@ -224,7 +224,7 @@ public class DataStore
         );
 
         teams.put("IZI", new Team(
-                "Homyno Tsun",
+                "IziDream",
                 "IZI",
                 "Cocow",
                 "Worker",
