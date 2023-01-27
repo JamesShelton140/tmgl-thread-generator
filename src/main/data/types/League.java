@@ -9,5 +9,8 @@ import lombok.Data;
 public class League
 {
     private String name;
+    private String shortName;
+    private String globalCast;
+    private List<Stage> stages;
     private List<Team> teams;
 }

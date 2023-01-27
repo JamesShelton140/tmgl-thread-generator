@@ -29,31 +29,71 @@ public class DataStore
 
         createMapPacks();
 
-        createStages();
-
         createLeagues();
     }
 
     private void createLeagues()
     {
-        leagues.put("TMGL Stage 1", new League("TMGL Stage 1", Arrays.asList(
-                teams.get("ALL"),
-                teams.get("BDS"),
-                teams.get("BIG"),
-                teams.get("G1"),
-                teams.get("ITB"),
-                teams.get("KC"),
-                teams.get("SIN"),
-                teams.get("SLY")))
+        leagues.put("TMGL Stage 1", new League("Grand League", "TMGL", "https://www.twitch.tv/wirtual",
+                Arrays.asList(
+                    playday(1),
+                    playday(2),
+                    playday(3),
+                    playday(4),
+                    playday(5),
+                    playday(6),
+                    playday(7)
+                ),
+
+                Arrays.asList(
+                    teams.get("ALL"),
+                    teams.get("BDS"),
+                    teams.get("BIG"),
+                    teams.get("G1"),
+                    teams.get("ITB"),
+                    teams.get("KC"),
+                    teams.get("SIN"),
+                    teams.get("SLY")
+                ))
+        );
+
+        leagues.put("TMCL Stage 1", new League("Challenger League", "TMCL", "https://www.twitch.tv/trackmania",
+                Arrays.asList(
+                    playday(1),
+                    playday(2),
+                    playday(3),
+                    playday(4),
+                    playday(5),
+                    playday(6),
+                    playday(7)
+                ),
+
+                Arrays.asList(
+                    teams.get("ATX"),
+                    teams.get("BS+"),
+                    teams.get("EXA"),
+                    teams.get("HOM"),
+                    teams.get("IZI"),
+                    teams.get("ORK"),
+                    teams.get("SCR"),
+                    teams.get("SPR")
+                ))
         );
     }
 
-    private void createStages()
+    private Stage playday(int i)
     {
-        stages.put("Playday 1", new Stage(
-                "Playday 1",
-                "1",
-                mapPacks.get("Pack 1"))
+        String mapPack;
+        switch (i)
+        {
+            case 1, 2 -> mapPack = "Pack 1";
+            default -> mapPack = "Pack 1";
+        }
+
+        return new Stage(
+                "Playday " + i,
+                Integer.toString(i),
+                mapPacks.get(mapPack)
         );
     }
 
@@ -145,6 +185,78 @@ public class DataStore
                 "Pac",
                 "https://www.twitch.tv/solary",
                 "fr")
+        );
+
+        teams.put("ATX", new Team(
+                "ALTERNATE aTTaX",
+                "ATX",
+                "Wosile",
+                "Skandear",
+                "",
+                "")
+        );
+
+        teams.put("BS+", new Team(
+                "BS+COMPETITION",
+                "BS+",
+                "Snow",
+                "Glast",
+                "https://www.twitch.tv/bscompetition",
+                "en")
+        );
+
+        teams.put("EXA", new Team(
+                "BS+COMPETITION",
+                "EXA",
+                "link",
+                "MiQuatro",
+                "https://www.twitch.tv/luckersturbo",
+                "en")
+        );
+
+        teams.put("HOM", new Team(
+                "Homyno Tsun",
+                "HOM",
+                "Feed",
+                "Ener",
+                "https://www.twitch.tv/tmggeek",
+                "fr")
+        );
+
+        teams.put("IZI", new Team(
+                "Homyno Tsun",
+                "IZI",
+                "Cocow",
+                "Worker",
+                "",
+                "")
+        );
+
+        teams.put("ORK", new Team(
+                "orKs GP Numelops",
+                "ORK",
+                "Complex",
+                "Panda",
+                "https://www.twitch.tv/orkstv",
+                "fr")
+        );
+
+        teams.put("SCR", new Team(
+                "Schweineaim Racing",
+                "SCR",
+                "Ratchet",
+                "Barbos",
+                "",
+                "")
+        );
+
+        teams.put("SPR", new Team(
+                "Sprout",
+                "SPR",
+                "Scrapie",
+                "Dexter",
+                "",
+                "")
         );
     }
 }

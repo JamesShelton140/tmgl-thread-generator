@@ -6,9 +6,10 @@ import lombok.Data;
 @Data
 public class Match
 {
+    private League league;
+    private Stage stage;
     private Team blueTeam;
     private Team redTeam;
-    private Stage stage;
     private MapPack mapPack;
     private String firstBan;
     private Maps blueTeamBan;

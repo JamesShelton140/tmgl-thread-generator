@@ -11,9 +11,10 @@ public class MatchMarkdownSerializer
         Team blueTeam = match.getBlueTeam();
         Team redTeam = match.getRedTeam();
 
-        String title = String.format("%s vs %s | Trackmania World Tour - Grand League - %s | Post-Match Thread",
+        String title = String.format("%s vs %s | Trackmania World Tour - %s - %s | Post-Match Thread",
                 blueTeam.getShortName(),
                 redTeam.getShortName(),
+                match.getLeague().getName(),
                 match.getStage().getName()
         );
 
@@ -54,7 +55,7 @@ public class MatchMarkdownSerializer
             threadBody.append(bold(team.getName() + ":"));
             threadBody.append(" " + team.getPlayer1() + " & " + team.getPlayer2());
             threadBody.append("\n\n");
-            threadBody.append(team.getCastLink() == null
+            threadBody.append(team.getCastLink() == null || team.getCastLink().equals("")
                     ? "No Team Cast"
                     : link("Team Cast [" + team.getCastLanguage() + "]", team.getCastLink()));
             threadBody.append("\n\n");
