@@ -1,6 +1,8 @@
 package main.data.types;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import lombok.Data;
 
 @Data
@@ -14,15 +16,21 @@ public class Match
     private String firstBan;
     private Maps blueTeamBan;
     private Maps redTeamBan;
-    private HashMap<Integer, MapPick> mapPicks;
+    private HashMap<Integer, MapPick> mapPicks = new HashMap<>();
     private Maps skippedMap;
+
+    public void addMapPick(MapPick mapPick)
+    {
+        mapPicks.put(mapPicks.size() + 1, mapPick);
+    }
 
     public int getScore(Team team)
     {
         int score = 0;
         for (MapPick mapPick : mapPicks.values())
         {
-            score += mapPick.getScore(team);
+            if(mapPick.hasWinner() && mapPick.getWinner().equals(team))
+                score++;
         }
         return score;
     }
@@ -66,5 +74,15 @@ public class Match
         }
 
         return map;
+    }
+
+    public boolean hasWinner()
+    {
+        return getBlueScore() == 4 || getRedScore() == 4;
+    }
+
+    public List<String> getPlayers()
+    {
+        return Arrays.asList(blueTeam.getPlayer1(), blueTeam.getPlayer2(), redTeam.getPlayer1(), redTeam.getPlayer2());
     }
 }
