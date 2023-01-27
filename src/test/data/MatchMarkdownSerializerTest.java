@@ -1,6 +1,7 @@
 package test.data;
 
 import main.data.MatchMarkdownSerializer;
+import main.data.types.League;
 import main.data.types.MapPick;
 import main.data.types.Maps;
 import main.data.types.Match;
@@ -49,11 +50,15 @@ public class MatchMarkdownSerializerTest
         Stage stage = mock(Stage.class);
         when(stage.getName()).thenReturn("Playday 2");
 
+        League league = mock(League.class);
+        when(league.getName()).thenReturn("Grand League");
+
         Maps skippedMap = Maps.PARKOUR;
 
         match = mock(Match.class);
         when(match.getBlueTeam()).thenReturn(blueTeam);
         when(match.getRedTeam()).thenReturn(redTeam);
+        when(match.getLeague()).thenReturn(league);
         when(match.getStage()).thenReturn(stage);
         when(match.getFirstBan()).thenReturn("red");
         when(match.getBlueScore()).thenReturn(2);
