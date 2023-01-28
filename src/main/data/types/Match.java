@@ -41,8 +41,12 @@ public class Match
 
         switch (colour)
         {
-            case "blue" -> team = blueTeam;
-            case "red" -> team = redTeam;
+            case "blue":
+                team = blueTeam;
+                break;
+            case "red":
+                team = redTeam;
+                break;
         }
 
         return getScore(team);
@@ -69,8 +73,12 @@ public class Match
 
         switch (colour)
         {
-            case "blue" -> map = blueTeamBan;
-            case "red" -> map = redTeamBan;
+            case "blue":
+                map = blueTeamBan;
+                break;
+            case "red":
+                map = redTeamBan;
+                break;
         }
 
         return map;

@@ -1,7 +1,6 @@
 package main.data.types;
 
 import java.util.HashMap;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -18,12 +17,21 @@ public class Round
         if(!result.containsKey(team.getPlayer1()) || !result.containsKey(team.getPlayer2())) return 0;
 
         int teamResult = result.get(team.getPlayer1()) + result.get(team.getPlayer2());
-        int score = switch (teamResult)
+        int score;
+        switch (teamResult)
         {
-            case 3 -> 3;
-            case 4 -> 2;
-            case 5, 6 -> 1;
-            default -> 0;
+            case 3:
+                score = 3;
+                break;
+            case 4:
+                score = 2;
+                break;
+            case 5:
+            case 6:
+                score = 1;
+                break;
+            default:
+                score = 0;
         };
 
         return score;

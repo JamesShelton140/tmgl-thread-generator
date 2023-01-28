@@ -86,8 +86,12 @@ public class DataStore
         String mapPack;
         switch (i)
         {
-            case 1, 2 -> mapPack = "Pack 1";
-            default -> mapPack = "Pack 1";
+            case 1:
+            case 2:
+                mapPack = "Pack 1";
+                break;
+            default:
+                mapPack = "Pack 1";
         }
 
         return new Stage(

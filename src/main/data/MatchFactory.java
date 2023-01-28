@@ -1,14 +1,15 @@
 package main.data;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import main.data.types.League;
 import main.data.types.MapPick;
 import main.data.types.Maps;
 import main.data.types.Match;
@@ -173,14 +174,16 @@ public class MatchFactory
         menu.showComponent(new ButtonScrollList("Select " + team + " team ban:", match.getStage().getMapPack().getMaps().stream().filter(map -> !hasBeenPicked(match, map)).map(Maps::getName).collect(Collectors.toList()), (e -> {
             switch (team)
             {
-                case "blue" -> match.setBlueTeamBan(Arrays.stream(Maps.values())
+                case "blue": match.setBlueTeamBan(Arrays.stream(Maps.values())
                         .filter(map -> map.getName().equals(((JButton)e.getSource()).getText()))
                         .findFirst()
                         .get());
-                case "red" -> match.setRedTeamBan(Arrays.stream(Maps.values())
+                    break;
+                case "red": match.setRedTeamBan(Arrays.stream(Maps.values())
                         .filter(map -> map.getName().equals(((JButton)e.getSource()).getText()))
                         .findFirst()
                         .get());
+                    break;
             }
             if(team.equals(match.getFirstBan()))
             {
@@ -236,7 +239,7 @@ public class MatchFactory
 
     private void getLeague(Match match)
     {
-        menu.showComponent(new ButtonScrollList("Pick League:", data.getLeagues().keySet().stream().toList(), (e -> {
+        menu.showComponent(new ButtonScrollList("Pick League:", new ArrayList<String>(data.getLeagues().keySet()), (e -> {
             match.setLeague(data.getLeagues().get(((JButton)e.getSource()).getText()));
             getStage(match);
         })));

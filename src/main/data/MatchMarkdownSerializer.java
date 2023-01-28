@@ -123,8 +123,12 @@ public class MatchMarkdownSerializer
 
         switch(team)
         {
-            case "blue" -> left = symbol;
-            case "red" -> right = symbol;
+            case "blue":
+                left = symbol;
+                break;
+            case "red":
+                right = symbol;
+                break;
         }
         return table(left, map, right);
     }
